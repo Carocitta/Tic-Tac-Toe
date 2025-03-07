@@ -4,7 +4,7 @@
 ❌ ⭕ ❌
 Este es un juego simple de Tic Tac Toe implementado en Java.
 
-## Características
+💻 ## Características
 
 * Juego de 2 jugadores.
 * Interfaz de consola.
@@ -12,7 +12,7 @@ Este es un juego simple de Tic Tac Toe implementado en Java.
 * Detección de ganador y empate.
 * Colores para diferenciar los jugadores.
 
-## Cómo ejecutar
+▶️ ## Cómo ejecutar
 
 1.  **Compilar el código:**
 
@@ -26,7 +26,7 @@ Este es un juego simple de Tic Tac Toe implementado en Java.
     java App
     ```
 
-## Cómo jugar
+🚀## Cómo jugar
 
 1.  El juego se ejecuta en la consola.
 2.  Los jugadores ingresan la fila y columna (0-2) donde quieren colocar su marca.
@@ -34,7 +34,7 @@ Este es un juego simple de Tic Tac Toe implementado en Java.
 4.  El juego continúa hasta que un jugador gana o hay un empate.
 
 
-## Dependencias
+ 📕 ## Dependencias
 
 * Java Development Kit (JDK)
 
