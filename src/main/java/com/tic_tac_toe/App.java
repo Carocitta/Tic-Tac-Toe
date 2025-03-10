@@ -56,5 +56,16 @@ public static boolean movimientoValido(char[][] tablero, int fila, int columna) 
     return fila >= 0 && fila < TAMANO_TABLERO && columna >= 0 && columna < TAMANO_TABLERO && tablero[fila][columna] == VACIO; 
 };
 
+public static boolean tableroLleno(char[][] tablero) {
+for (int fila = 0; fila < TAMANO_TABLERO; fila++) {
+    for (int columna = 0; columna < TAMANO_TABLERO; columna++) {
+        if (tablero[fila][columna] == VACIO) {
+            return false;
+        }
+    }
+}
+return true;
+}
+
 }
 
