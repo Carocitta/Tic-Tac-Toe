@@ -52,5 +52,9 @@ for (int columna = 0; columna < TAMANO_TABLERO; columna++){
     }
 }
 
+public static boolean movimientoValido(char[][] tablero, int fila, int columna) {
+    return fila >= 0 && fila < TAMANO_TABLERO && columna >= 0 && columna < TAMANO_TABLERO && tablero[fila][columna] == VACIO; 
+};
+
 }
 
