@@ -52,5 +52,5 @@ for (int columna = 0; columna < TAMANO_TABLERO; columna++){
     }
 }
 
-}
+
 
