@@ -69,11 +69,7 @@ for (int columna = 0; columna < TAMANO_TABLERO; columna++) {
 if (tablero[0][0] == jugador && tablero[1][1] == jugador && tablero[2][2] == jugador) {
     return true;
 }
-
-if (tablero[0][2] == jugador && tablero[1][1] == jugador && tablero[2][0] == jugador) {
-    return true;
-}
-return false;
+if (tablero[0][2] == jugador &)
 }
 
 

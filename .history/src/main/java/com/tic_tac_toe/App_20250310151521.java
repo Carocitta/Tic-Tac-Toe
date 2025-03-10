@@ -62,19 +62,9 @@ for (int fila = 0; fila < TAMANO_TABLERO; fila++) {
     }
 }
 for (int columna = 0; columna < TAMANO_TABLERO; columna++) {
-    if(tablero[0][columna] == jugador && tablero[1][columna] == jugador && tablero[2][columna] == jugador) {
-        return true;
-    }
-}
-if (tablero[0][0] == jugador && tablero[1][1] == jugador && tablero[2][2] == jugador) {
-    return true;
+    if(tablero)
 }
 
-if (tablero[0][2] == jugador && tablero[1][1] == jugador && tablero[2][0] == jugador) {
-    return true;
-}
-return false;
-}
 
 
     public static boolean tableroLleno(char[][] tablero) {
