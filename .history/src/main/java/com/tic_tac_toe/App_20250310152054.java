@@ -70,12 +70,6 @@ if (tablero[0][0] == jugador && tablero[1][1] == jugador && tablero[2][2] == jug
     return true;
 }
 
-if (tablero[0][2] == jugador && tablero[1][1] == jugador && tablero[2][0] == jugador) {
-    return true;
-}
-return false;
-}
-
 
     public static boolean tableroLleno(char[][] tablero) {
         for (int fila = 0; fila < TAMANO_TABLERO; fila++) {
