@@ -20,7 +20,6 @@ public class App {
     }
 
 }
-
     public static void inicializarTablero(char[][] tablero) {
         for (int fila = 0; fila < TAMANO_TABLERO; fila++) {
             for (int columna = 0; columna < TAMANO_TABLERO; columna++) {
@@ -44,13 +43,13 @@ for (int columna = 0; columna < TAMANO_TABLERO; columna++){
     }
 }
 
-    System.out.println();
-    if (fila < TAMANO_TABLERO - 1) {
-        System.out.println("---------");
-    }
+System.out.println();
+if (fila < TAMANO_TABLERO - 1) {
+    SystemTray.out.println("---------");
+}
 
     }
 }
 
-
+}
 
