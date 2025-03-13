@@ -1,5 +1,7 @@
 package com.tic_tac_toe;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -15,8 +17,51 @@ public class App {
     private static final String COLOR_MAGENTA = "\u001B[35m";
     private static final String COLOR_VERDE = "\001B[32m";
 
+
     public static void main(String[] args) {
-        System.out.println("Hello Carol!");
+        char[][] tablero = new char[TAMANO_TABLERO][TAMANO_TABLERO];
+        inicializarTablero(tablero);
+        char jugador = JUGADOR_X;
+        boolean juegoTerminado = false;
+        Scanner escaner = new Scanner(System.in);
+
+        while (!juegoTerminado) {
+            imprimirTablero(tablero);
+            System.out.print("Jugador " + jugador + " ingresa fila y columna (0-2): ");
+
+            if (escaner.hasNextInt()) {
+                int fila = escaner.nextInt();
+                if (escaner.hasNextInt()) {
+                    int columna = escaner.nextInt();
+                    if (movimientoValido(tablero, fila, columna)) {
+                        tablero[fila][columna] = jugador;
+                        if (hayGanador(tablero, jugador)) {
+                            imprimirTablero(tablero);
+                            System.out.println(COLOR_VERDE + "¡Jugador " + jugador + " Ha ganado! " + RESET_COLOR);
+                            juegoTerminado = true;
+                            
+                        } else if (tableroLleno(tablero)) {
+                            imprimirTablero(tablero);
+                            System.out.println(COLOR_VERDE + "¡Es un empate!" + RESET_COLOR);
+                            juegoTerminado = true;
+                        } else { 
+                            jugador = (jugador == JUGADOR_X) ? JUGADOR_O : JUGADOR_X;
+                        }
+                    } else { 
+                        System.out.println("Movimiento invalido. Intentalo de nuevo.");
+                    }
+                } else {
+                    System.out.println("Entrada invalida. Intentalo de nuevo.");
+                    escaner.next();
+                }
+                
+            } else {
+                System.out.println("Entrada invalida. Intentalo de nuevo.");
+                escaner.next();
+            }
+        }
+        imprimirTablero(tablero);
+        escaner.close();
     }
 
     public static void inicializarTablero(char[][] tablero) {
