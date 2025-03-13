@@ -13,9 +13,9 @@ public class App {
     private static final char JUGADOR_O = 'O';
 
     private static final String RESET_COLOR = "\u001B[0m";
-    private static final String COLOR_CYAN = "\u001B[36-m";
+    private static final String COLOR_CYAN = "\u001B[36m";
     private static final String COLOR_MAGENTA = "\u001B[35m";
-    private static final String COLOR_VERDE = "\001B[32m";
+    private static final String COLOR_VERDE = "\u001B[32m";
 
 
     public static void main(String[] args) {
