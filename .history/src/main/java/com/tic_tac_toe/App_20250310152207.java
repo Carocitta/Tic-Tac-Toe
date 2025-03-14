@@ -1,7 +1,5 @@
 package com.tic_tac_toe;
 
-import java.util.Scanner;
-
 /**
  * Hello world!
  *
@@ -13,64 +11,12 @@ public class App {
     private static final char JUGADOR_O = 'O';
 
     private static final String RESET_COLOR = "\u001B[0m";
-    private static final String COLOR_CYAN = "\u001B[36m";
+    private static final String COLOR_CYAN = "\u001B[36-m";
     private static final String COLOR_MAGENTA = "\u001B[35m";
-    private static final String COLOR_VERDE = "\u001B[32m";
-    private static final String COLOR_ROJO = "\u001B[31m";
-
+    private static final String COLOR_VERDE = "\001B[32m";
 
     public static void main(String[] args) {
-        char[][] tablero = new char[TAMANO_TABLERO][TAMANO_TABLERO];
-        inicializarTablero(tablero);
-       
-        char jugador = JUGADOR_X;
-        boolean juegoTerminado = false;
-        Scanner escaner = new Scanner(System.in);
-
-        while (!juegoTerminado) {
-            System.out.println();
-            imprimirTablero(tablero);
-            System.out.print("\033[0;1mJugador " + jugador + " ingresa fila y columna (0 2): \033[0m" + COLOR_VERDE);
-
-            if (escaner.hasNextInt()) {
-                int fila = escaner.nextInt();
-                if (escaner.hasNextInt()) {
-                    int columna = escaner.nextInt();
-                    if (movimientoValido(tablero, fila, columna)) {
-                        tablero[fila][columna] = jugador;
-                        if (hayGanador(tablero, jugador)) {
-                            imprimirTablero(tablero);
-                            System.out.println();
-                            System.out.println(COLOR_VERDE + "***************************************");
-                            System.out.println(COLOR_VERDE + "¡Jugador " + jugador + " ha ganado!" + RESET_COLOR);
-                            System.out.println(COLOR_VERDE + "***************************************");
-                            juegoTerminado = true;
-                            
-                        } else if (tableroLleno(tablero)) {
-                            imprimirTablero(tablero);
-                            System.out.println();
-                            System.out.println(COLOR_VERDE + "***************************************");
-                            System.out.println(COLOR_VERDE + "¡Es un empate!" + RESET_COLOR);
-                            System.out.println(COLOR_VERDE + "***************************************");
-                            juegoTerminado = true;
-                        } else { 
-                            jugador = (jugador == JUGADOR_X) ? JUGADOR_O : JUGADOR_X;
-                        }
-                    } else { 
-                        System.out.println(COLOR_ROJO + "Movimiento invalido. Intentalo de nuevo." + RESET_COLOR);
-                    }
-                } else {
-                    System.out.println(COLOR_ROJO + "Entrada invalida. Intentalo de nuevo." + RESET_COLOR);
-                    escaner.next();
-                }
-                
-            } else {
-                System.out.println(COLOR_ROJO + "Entrada invalida. Intentalo de nuevo." + RESET_COLOR);
-                escaner.next();
-            }
-        }
-        imprimirTablero(tablero);
-        escaner.close();
+        System.out.println("Hello Carol!");
     }
 
     public static void inicializarTablero(char[][] tablero) {
@@ -102,13 +48,12 @@ public class App {
             }
 
         }
-        System.out.println();
     }
 
     public static boolean movimientoValido(char[][] tablero, int fila, int columna) {
         return fila >= 0 && fila < TAMANO_TABLERO && columna >= 0 && columna < TAMANO_TABLERO
                 && tablero[fila][columna] == VACIO;
-    }
+    };
 
 public static boolean hayGanador(char[][] tablero, char jugador) {
 for (int fila = 0; fila < TAMANO_TABLERO; fila++) {
@@ -124,7 +69,6 @@ for (int columna = 0; columna < TAMANO_TABLERO; columna++) {
 if (tablero[0][0] == jugador && tablero[1][1] == jugador && tablero[2][2] == jugador) {
     return true;
 }
-
 if (tablero[0][2] == jugador && tablero[1][1] == jugador && tablero[2][0] == jugador) {
     return true;
 }
