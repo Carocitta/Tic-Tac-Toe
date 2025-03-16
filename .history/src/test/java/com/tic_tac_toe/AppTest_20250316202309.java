@@ -19,7 +19,7 @@ public class AppTest {
   }
 
   @Test
-  public void DebeDarVerdaderoCuandoTicTacToeCompleto() {
+  public void itShouldReturnTrueWhenTheTicTacToeIsCompleted() {
     char[][] ticTacToeTablero = new char[App.TAMANO_TABLERO][App.TAMANO_TABLERO];
     App.inicializarTablero(ticTacToeTablero);
 
@@ -33,7 +33,7 @@ public class AppTest {
   }
 
   @Test
-  public void DebeDarFalsoCuandoTicTacToeContinuaJugando() {
+  public void itShouldReturnFalseWhenTheTicTacToeIsOngoing() {
     char[][] ticTacToeTablero = new char[App.TAMANO_TABLERO][App.TAMANO_TABLERO];
     App.inicializarTablero(ticTacToeTablero);
 

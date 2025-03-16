@@ -7,10 +7,10 @@ import java.util.Scanner;
  *
  */
 public class App {
-    public static final int TAMANO_TABLERO = 3;
-    public static final char VACIO = ' ';
-    public static final char JUGADOR_X = 'X';
-    public static final char JUGADOR_O = 'O';
+    private static final int TAMANO_TABLERO = 3;
+    private static final char VACIO = ' ';
+    private static final char JUGADOR_X = 'X';
+    private static final char JUGADOR_O = 'O';
 
     private static final String RESET_COLOR = "\u001B[0m";
     private static final String COLOR_CYAN = "\u001B[36m";
@@ -30,7 +30,7 @@ public class App {
         while (!juegoTerminado) {
             System.out.println();
             imprimirTablero(tablero);
-            System.out.print("\033[0;1mJugador " + jugador + " ingresa fila y columna (0 2): \033[0m" + COLOR_VERDE);
+            System.out.print("Jugador " + jugador + " ingresa fila y columna (0-2): " + );
 
             if (escaner.hasNextInt()) {
                 int fila = escaner.nextInt();
