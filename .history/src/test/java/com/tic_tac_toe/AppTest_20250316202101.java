@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class AppTest {
   @Test
-  public void DebeDarFalsoCuandoTicTacToeEmpieza() {
+  public void itShouldReturnFalseWhenTheTicTacToeHasStarted() {
     char[][] ticTacToeTablero = new char[App.TAMANO_TABLERO][App.TAMANO_TABLERO];
     App.inicializarTablero(ticTacToeTablero);
 
@@ -19,28 +19,28 @@ public class AppTest {
   }
 
   @Test
-  public void DebeDarVerdaderoCuandoTicTacToeCompleto() {
-    char[][] ticTacToeTablero = new char[App.TAMANO_TABLERO][App.TAMANO_TABLERO];
-    App.inicializarTablero(ticTacToeTablero);
+  public void itShouldReturnTrueWhenTheTicTacToeIsCompleted() {
+    char[][] ticTacToeBoard = new char[App.TAMANO_TABLERO][App.TAMANO_TABLERO];
+    App.inicializarTablero(ticTacToeBoard);
 
     for (int fila = 0; fila < App.TAMANO_TABLERO; fila++) {
       for (int columna = 0; columna < App.TAMANO_TABLERO; columna++) {
-        ticTacToeTablero[fila][columna] = new Random().nextBoolean() ? App.JUGADOR_X : App.JUGADOR_O;
+        ticTacToeBoard[fila][columna] = new Random().nextBoolean() ? App.JUGADOR_X : App.JUGADOR_O;
       }
     }
 
-    assertTrue(App.tableroLleno(ticTacToeTablero));
+    assertTrue(App.tableroLleno(ticTacToeBoard));
   }
 
   @Test
-  public void DebeDarFalsoCuandoTicTacToeContinuaJugando() {
-    char[][] ticTacToeTablero = new char[App.TAMANO_TABLERO][App.TAMANO_TABLERO];
-    App.inicializarTablero(ticTacToeTablero);
+  public void itShouldReturnFalseWhenTheTicTacToeIsOngoing() {
+    char[][] ticTacToeBoard = new char[App.TAMANO_TABLERO][App.TAMANO_TABLERO];
+    App.inicializarTablero(ticTacToeBoard);
 
     int fila = new Random().nextInt(0, 2);
     int columna = new Random().nextInt(0, 2);
-    ticTacToeTablero[fila][columna] = new Random().nextBoolean() ? App.JUGADOR_X : App.JUGADOR_O;
+    ticTacToeBoard[fila][columna] = new Random().nextBoolean() ? App.JUGADOR_X : App.JUGADOR_O;
 
-    assertFalse(App.tableroLleno(ticTacToeTablero));
+    assertFalse(App.tableroLleno(ticTacToeBoard));
   }
 }

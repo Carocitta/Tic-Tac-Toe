@@ -33,7 +33,7 @@ public class AppTest {
   }
 
   @Test
-  public void DebeDarFalsoCuandoTicTacToeContinuaJugando() {
+  public void DebeDarFalsoCuandoTicTacToeContinua() {
     char[][] ticTacToeTablero = new char[App.TAMANO_TABLERO][App.TAMANO_TABLERO];
     App.inicializarTablero(ticTacToeTablero);
 
